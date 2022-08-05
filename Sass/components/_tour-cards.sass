@@ -1,0 +1,24 @@
+.card-tour
+    height: 50rem
+    perspective: 150rem
+    -mos-perspective: 150rem
+    position: relative
+    &__side
+        height: 50rem
+        transition: all .9s ease-out //Анимация начинается и заканчивается плавно
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        &_front
+            background: linear-gradient(120deg, rgba($color-brown-light, 0.7) 70%, rgba($color-black, 0.4) 99.94%)
+        &_back
+            background: green
+            transform: rotateY(180deg)
+    &:hover &__side_front
+        transform: rotateY(180deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
+        
