@@ -1,6 +1,6 @@
 //Это компонент кнопки
 .btn
-    &:link, &:visited
+    &, &:link, &:visited      //& - добавляет стили ко всем тегам с этим классом
         @include style-link($color-grey)
         padding: 1.55rem 4rem
         background: $color-white
@@ -8,6 +8,7 @@
         transition: all .3s
         position: relative
         font-size: 2rem
+        border: none
     &:hover
         transform: translateY(-4px)
         box-shadow: $box-shadow
@@ -32,4 +33,12 @@
     &_animated
         animation: BtnToUp .7s .5s ease-out
         animation-fill-mode: backwards
+
+.btn_brown
+    &, &:link, &:visited
+        background: $color-brown-dark
+        color: $color-white
+    &:hover
+    &::after
+        background-color: $color-brown-dark
             

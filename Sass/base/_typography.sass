@@ -29,6 +29,7 @@ body
         animation-duration: 1.7s
         animation-delay: 1s
         animation-timing-function: easy
+        padding-bottom: 6rem
 
 
 .title-secondary
@@ -42,10 +43,11 @@ body
     color: transparent  //Цвет для текста
     backface-visibility: hidden
     transition: all .4s
-    margin-bottom: 8rem
     &:hover
         transform: skewX(15deg) skewY(2deg) scale(1.1)
         text-shadow: 0rem .4rem .4rem rgba($color-black, .25)
+    &_white
+        color: $color-white
 
 .title-third
     font-weight: 800
