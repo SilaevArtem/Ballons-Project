@@ -3,6 +3,8 @@
     perspective: 150rem
     -mos-perspective: 150rem
     position: relative
+    @include respond(tab-port)
+        height: auto
     &__side
         height: 50rem
         transition: all .9s ease-out //Анимация начинается и заканчивается плавно
@@ -14,16 +16,29 @@
         backface-visibility: hidden
         box-shadow: $box-shadow
         border-radius: .5rem
+        @include respond(tab-port)
+            height: auto
+            position: relative
         &_front
+            @include respond(tab-port)
+            padding-bottom: 13rem
         &_back
             background: $color-brown-light
             transform: rotateY(180deg)
+            @include respond(tab-port)
+                transform: rotate(0deg)
+                padding: 5rem
+                clip-path: polygon(0 0%, 100% 20%, 100% 100%, 0 100%)  //Обрезка
+                margin-top: -10rem
+                padding-top: 12rem
     &:hover &__side_front
         transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
     &:hover &__side_back
         transform: rotateY(0deg)
     &__img
-        clip-path: polygon(0 1%, 100% 0, 98% 100%, 0 81%);
+        clip-path: polygon(0 1%, 100% 0, 98% 100%, 0 81%)
         background-blend-mode: hard-light
         height: 21rem
         &_1
@@ -32,6 +47,8 @@
             background: $color-brown-dark url(../img/card-2.jpg) center/cover no-repeat
         &_3
             background: $color-brown-dark url(../img/card-3.jpg) center/cover no-repeat
+        @include respond(tab-port)
+            height: 30rem
     &__title
         font-size: 2.8rem
         letter-spacing: .2rem
@@ -42,6 +59,9 @@
         position: absolute
         top: 17rem
         right: 0rem
+        @include respond(tab-port)
+            top: 25rem
+            font-size: 3.8rem
     &__span
         background: linear-gradient(90deg , $color-brown-light, $color-brown-dark)
         padding: 1rem 2rem .3rem 2rem
@@ -52,6 +72,8 @@
             right: 0rem
             padding-bottom: 1rem
             padding-top: 0rem
+            @include respond(tab-port)
+                top: 3.4rem
     &__desc
         ul
             list-style: none // убирает знаки из списка
@@ -66,12 +88,22 @@
                 display: inline-block
                 &:not(:last-child)
                     margin-bottom: 2rem
+                @include respond(land-tab)
+                    font-size: 1.5rem
+                @include respond(tab-port)
+                    font-size: 2rem
 
     &__backside-box
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
+        @include respond(tab-port)
+            position: relative
+            top: 0
+            left: 0
+            transform: translate(0%, 0%)
+            text-align: center
     &__text
         margin-bottom: 9rem
         letter-spacing: .2rem
